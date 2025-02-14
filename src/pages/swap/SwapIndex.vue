@@ -31,13 +31,13 @@
                         @click="changeKlineTabs(0)"
                         :class="KlineTabs == 0 ? 'tabActive' : 'tab'"
                       >
-                        {{$t('newUi.text83')}}
+                        {{ $t("newUi.text83") }}
                       </div>
                       <div
                         @click="changeKlineTabs(1)"
                         :class="KlineTabs == 1 ? 'tabActive' : 'tab'"
                       >
-                        {{$t('newUi.text84')}}
+                        {{ $t("newUi.text84") }}
                       </div>
                     </div>
                     <div class="handler">
@@ -59,6 +59,11 @@
                     id="kline_container"
                     :class="{ hidden: currentImgTable === 's' }"
                   ></div>
+                  <img
+                    src="../../assets/images/kline_logo.svg"
+                    alt=""
+                    class="kline_logo"
+                  />
                   <DepthGraph
                     :class="{ hidden: currentImgTable === 'k' }"
                     ref="depthGraph"
@@ -69,7 +74,7 @@
             <div class="tabs-container">
               <div class="center plate-wrap m_l5" style="position: relative">
                 <div class="plateAllTitle">
-                  {{$t('newUi.text85')}}
+                  {{ $t("newUi.text85") }}
                 </div>
                 <keep-alive>
                   <plateAll
@@ -167,7 +172,7 @@
                   :class="openTabVal == 1 ? 'tabActive' : ''"
                   @click="changeOpenTaba('1')"
                 >
-                {{ $t("swap.close") }}
+                  {{ $t("swap.close") }}
                 </div>
               </div>
               <div class="entrustOrderTabs">
@@ -208,7 +213,9 @@
                     </div>
                     <div>
                       <router-link to="/finance/all">
-                        <span class="routlink">{{ $t("swap.zijinhuazhuan") }}</span>
+                        <span class="routlink">{{
+                          $t("swap.zijinhuazhuan")
+                        }}</span>
                       </router-link>
                     </div>
                   </div>
@@ -284,7 +291,9 @@
                   style="margin-bottom: 10px"
                   v-if="entrustOrderType == 'LIMIT_PRICE'"
                 >
-                  <div class="limit_price_title">{{ $t("dolphin.text146") }}</div>
+                  <div class="limit_price_title">
+                    {{ $t("dolphin.text146") }}
+                  </div>
                   <div class="limit_price_style">
                     <div class="limit_price_left">
                       <input
@@ -325,7 +334,10 @@
                   />
                 </FormItem>
                 <!-- 开仓数量 -->
-                <FormItem style="margin-bottom: 12px" :label="$t('buyCoin.universal.number')">
+                <FormItem
+                  style="margin-bottom: 12px"
+                  :label="$t('buyCoin.universal.number')"
+                >
                   <Poptip
                     trigger="focus"
                     :content="
@@ -394,7 +406,7 @@
                 </div>
                 <div class="silder_openNumber">
                   <div>
-                    <span>{{ $t('new.orders.buy')}}：</span>
+                    <span>{{ $t("new.orders.buy") }}：</span>
                     <span
                       >{{
                         (
@@ -441,7 +453,7 @@
                     >
                   </div>
                   <div>
-                    <span>{{ $t('new.orders.sell')}}：</span>
+                    <span>{{ $t("new.orders.sell") }}：</span>
                     <span
                       >{{
                         (
@@ -543,13 +555,13 @@
                   type="primary"
                   class="open_btn"
                   @click="handleBuyAndSell('BUY')"
-                  >{{ $t('newUi.text75')}}</Button
+                  >{{ $t("newUi.text75") }}</Button
                 >
                 <Button
                   type="error"
                   class="open_btn"
                   @click="handleBuyAndSell('SELL')"
-                  >{{ $t('newUi.text76')}}</Button
+                  >{{ $t("newUi.text76") }}</Button
                 >
               </div>
               <div class="row_list" v-if="isLogin">
@@ -559,12 +571,12 @@
                       trigger="hover"
                       width="300"
                       :word-wrap="true"
-                      :content="
-                       $t('newUi.text87')
-                      "
+                      :content="$t('newUi.text87')"
                       placement="top-start"
                     >
-                      <span style="cursor: help;">{{ $t('carouselItem.text224') }}</span>
+                      <span style="cursor: help;">{{
+                        $t("carouselItem.text224")
+                      }}</span>
                     </Poptip>
                     <span
                       v-if="
@@ -581,12 +593,12 @@
                       trigger="hover"
                       width="300"
                       :word-wrap="true"
-                      :content="
-                        $t('newUi.text87')
-                      "
+                      :content="$t('newUi.text87')"
                       placement="left-start"
                     >
-                      <span style="cursor: help;">{{ $t('carouselItem.text224') }}</span>
+                      <span style="cursor: help;">{{
+                        $t("carouselItem.text224")
+                      }}</span>
                     </Poptip>
                     <span
                       v-if="
@@ -608,7 +620,9 @@
                       :content="$t('newUi.text88')"
                       placement="top-start"
                     >
-                      <span style="cursor: help;">{{$t('follow.universal.earnestMoney')}}</span>
+                      <span style="cursor: help;">{{
+                        $t("follow.universal.earnestMoney")
+                      }}</span>
                     </Poptip>
                     <span
                       v-if="
@@ -628,7 +642,9 @@
                       :content="$t('newUi.text88')"
                       placement="left-start"
                     >
-                      <span style="cursor: help;">{{$t('follow.universal.earnestMoney')}}</span>
+                      <span style="cursor: help;">{{
+                        $t("follow.universal.earnestMoney")
+                      }}</span>
                     </Poptip>
                     <span
                       v-if="
@@ -644,7 +660,7 @@
                 <div class="row_one">
                   <!-- 可开 可开多 -->
                   <div class="open_number" style="cursor: default;">
-                    <span>{{$t('carouselItem.text225')}}</span>
+                    <span>{{ $t("carouselItem.text225") }}</span>
                     <span>
                       {{
                         isLogin
@@ -663,7 +679,7 @@
                   </div>
                   <!-- 可开 可开空 -->
                   <div class="open_number" style="cursor: default;">
-                    <span>{{$t('carouselItem.text225')}}</span>
+                    <span>{{ $t("carouselItem.text225") }}</span>
                     <span>
                       {{
                         isLogin
@@ -696,23 +712,21 @@
           <div class="open_bottom">
             <div v-show="isLogin">
               <div class="open_bottom_title">
-                {{ $t('buyCoin.pages.userCenter.PayType.txt7') }}
+                {{ $t("buyCoin.pages.userCenter.PayType.txt7") }}
               </div>
               <div class="open_bottom_center">
                 <div class="bottom_center_title">
-                  {{$t('newUi.text89')}}
+                  {{ $t("newUi.text89") }}
                 </div>
                 <div class="bottom_center_row">
                   <Poptip
                     trigger="hover"
                     width="300"
                     :word-wrap="true"
-                    :content="
-                      $t('newUi.text90')
-                    "
+                    :content="$t('newUi.text90')"
                     placement="top-start"
                   >
-                    <div style="cursor: help;">{{$t('newUi.text89')}}</div>
+                    <div style="cursor: help;">{{ $t("newUi.text89") }}</div>
                   </Poptip>
                   <div>
                     {{
@@ -731,7 +745,7 @@
                     :content="$t('newUi.text92')"
                     placement="top-start"
                   >
-                    <div style="cursor: help;">{{$t('newUi.text91')}}</div>
+                    <div style="cursor: help;">{{ $t("newUi.text91") }}</div>
                   </Poptip>
                   <div>{{ minBond.toFixed(4) }}</div>
                 </div>
@@ -743,7 +757,7 @@
                     :content="$t('newUi.text93')"
                     placement="top-start"
                   >
-                    <div style="cursor: help;">{{$t('newUi.text94')}}</div>
+                    <div style="cursor: help;">{{ $t("newUi.text94") }}</div>
                   </Poptip>
                   <div>
                     {{
@@ -759,7 +773,7 @@
               </div>
               <div class="open_bottom_center">
                 <div class="bottom_center_row">
-                  <div>{{$t('new.finance.walletBalance')}}</div>
+                  <div>{{ $t("new.finance.walletBalance") }}</div>
                   <div>
                     {{
                       pageInfo.usdtBalance
@@ -769,7 +783,7 @@
                   </div>
                 </div>
                 <div class="bottom_center_row">
-                  <div>{{ $t('swap.profitandloss') }}</div>
+                  <div>{{ $t("swap.profitandloss") }}</div>
                   <div>
                     {{ profitAndLoss ? profitAndLoss.toFixed(4) : "--" }}USDT
                   </div>
@@ -779,16 +793,16 @@
                     class="bottom_row1_btn"
                     @click="link_to('/finance/deposit')"
                   >
-                    {{$t('new.header.buyCoin')}}
+                    {{ $t("new.header.buyCoin") }}
                   </div>
                   <div
                     class="bottom_row1_btn"
                     @click="link_to('/flashExchange')"
                   >
-                    {{$t('newUi.text95')}}
+                    {{ $t("newUi.text95") }}
                   </div>
                   <div class="bottom_row1_btn" @click="link_to('/finance/all')">
-                    {{$t('new.finance.transfer')}}
+                    {{ $t("new.finance.transfer") }}
                   </div>
                 </div>
               </div>
@@ -2973,6 +2987,15 @@ export default {
               position: relative;
               overflow: hidden;
               background-color: #fff;
+              .kline_logo {
+                width: 200px;
+                height: 50px;
+                position: absolute;
+                bottom: 100px;
+                left: 50px;
+                z-index: 9999;
+                pointer-events: none;
+              }
             }
             .trade_wrap {
               .trade_menu {
