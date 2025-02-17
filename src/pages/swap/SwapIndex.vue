@@ -2983,7 +2983,7 @@ export default {
                 }
               }
             }
-            .imgtable {
+            .imgtabnpm rule {
               position: relative;
               overflow: hidden;
               background-color: #fff;

@@ -133,6 +133,11 @@
                     id="kline_container"
                     :class="{ hidden: currentImgTable === 's' }"
                   ></div>
+                  <img
+                    src="../../assets/images/kline_logo.svg"
+                    alt=""
+                    class="kline_logo"
+                  />
                   <DepthGraph
                     :class="{ hidden: currentImgTable === 'k' }"
                     ref="depthGraph"
@@ -4000,6 +4005,15 @@ export default {
               // height: 439px;
               position: relative;
               overflow: hidden;
+              .kline_logo {
+                width: 200px;
+                height: 50px;
+                position: absolute;
+                bottom: 100px;
+                left: 50px;
+                z-index: 9999;
+                pointer-events: none;
+              }
             }
             .trade_wrap {
               width: 100%;
